@@ -39,7 +39,7 @@ client.on('message', msg => {
           msg.channel.send(attachment)
         })
       }).catch((err) => {
-        sg.channel.send("i'm broken")
+        console.log(err)
       })
     }
   }
