@@ -4,7 +4,7 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.0.0'
+const VERSION = 'v1.0.1'
 
 client.on('ready', () => {
   console.log(`⚡ lmap flag bot ${VERSION} works as a swiss watch`)
@@ -20,7 +20,7 @@ client.on('message', msg => {
   let authorTag = msg.author.tag
   let authorUsername = msg.author.username
   let authorColor = msg.member.displayHexColor
-  let authorAvatar = msg.author.displayAvatarURL()
+  let authorAvatar = msg.author.displayAvatarURL({format: 'png'})
 
   let getGuild = client.guilds.cache.get(msg.guild.id)
 
