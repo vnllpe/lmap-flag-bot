@@ -20,7 +20,7 @@ client.on('message', msg => {
   let authorTag = msg.author.tag
   let authorUsername = msg.author.username
   let authorColor = msg.member.displayHexColor
-  let authorAvatar = msg.author.displayAvatarURL({dynamic : true})
+  let authorAvatar = msg.author.displayAvatarURL()
 
   let getGuild = client.guilds.cache.get(msg.guild.id)
 
