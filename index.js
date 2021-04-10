@@ -38,6 +38,8 @@ client.on('message', msg => {
           let attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'ave lmap.png')
           msg.channel.send(attachment)
         })
+      }).catch((err) => {
+        sg.channel.send("i'm broken")
       })
     }
   }
