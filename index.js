@@ -4,7 +4,7 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.1.0'
+const VERSION = 'v1.1.1'
 
 client.on('ready', () => {
   console.log(`⚡ lmap flag bot ${VERSION} works as a swiss watch`)
@@ -48,6 +48,12 @@ client.on('message', msg => {
         }).catch((err) => {
           console.log(err)
         })
+      }).catch((err) => {
+        let embed = new Discord.MessageEmbed()
+                               .setColor(`0xFF0000`)
+                               .setTitle('pls try again')
+
+        msg.channel.send(embed)
       })
     } else if (text === 'l flag') {
       let canvas = createCanvas(400, 400)
