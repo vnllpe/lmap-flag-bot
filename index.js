@@ -4,7 +4,7 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.0.1'
+const VERSION = 'v1.1.0'
 
 client.on('ready', () => {
   console.log(`⚡ lmap flag bot ${VERSION} works as a swiss watch`)
@@ -25,7 +25,31 @@ client.on('message', msg => {
   let getGuild = client.guilds.cache.get(msg.guild.id)
 
   if (!msg.author.bot) {
-    if (text === 'l flag') {
+    if (text.startsWith('l flag ')) {
+      let splitMessage = text.split(' ')
+      let userPing = splitMessage[2]
+      let userId = userPing.slice(3, -1)
+
+      let canvas = createCanvas(400, 400)
+      let ctx = canvas.getContext('2d')
+
+      getGuild.members.fetch(userId).then(member => {
+        let avatar = member.user.displayAvatarURL({format: 'png'})
+
+        loadImage(avatar).then((image) => {
+          loadImage('img/lmap.jpg').then((flag) => {
+            ctx.drawImage(image, 0, 0, 400, 400)
+            ctx.globalAlpha = 0.5
+            ctx.drawImage(flag, 0, 0, 400, 400)
+
+            let attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'ave lmap.png')
+            msg.channel.send(attachment)
+          })
+        }).catch((err) => {
+          console.log(err)
+        })
+      })
+    } else if (text === 'l flag') {
       let canvas = createCanvas(400, 400)
       let ctx = canvas.getContext('2d')
 
