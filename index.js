@@ -4,7 +4,36 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.1.2'
+const VERSION = 'v1.2.0'
+
+function makeFlag(arg, text, msg) {
+  let canvas = createCanvas(400, 400)
+  let ctx = canvas.getContext('2d')
+
+  let user = msg.mentions.users.first() || msg.author
+
+  let avatar = user.avatarURL({format: 'png'})
+
+  let whichFlag
+  if (arg === 'old') {
+    whichFlag = 'img/lmap_old.png'
+  } else {
+    whichFlag = 'img/lmap.jpg'
+  }
+
+  loadImage(avatar).then((image) => { 
+    loadImage(whichFlag).then((flag) => {
+      ctx.drawImage(image, 0, 0, 400, 400)
+      ctx.globalAlpha = 0.5
+      ctx.drawImage(flag, 0, 0, 400, 400)
+
+      let attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'ave lmap.png')
+      msg.channel.send(attachment)
+    })
+  }).catch((err) => {
+    console.log(err)
+  })
+}
 
 client.on('ready', () => {
   console.log(`⚡ lmap flag bot ${VERSION} works as a swiss watch`)
@@ -16,6 +45,9 @@ client.on('message', msg => {
   let text = msg.content.toLowerCase().replace('ё', 'е')
   let textOriginal = msg.content
 
+  let prefix = text[0]
+  let command = text.slice(2)
+
   let authorPing = `<@!${msg.author.id.toString()}>`
   let authorTag = msg.author.tag
   let authorUsername = msg.author.username
@@ -25,46 +57,12 @@ client.on('message', msg => {
   let getGuild = client.guilds.cache.get(msg.guild.id)
 
   if (!msg.author.bot) {
-    if (text.startsWith('l flag ')) {
-      let splitMessage = text.split(' ')
-      let userPing = splitMessage[2]
-      let userId = userPing.slice(3, -1)
-
-      let canvas = createCanvas(400, 400)
-      let ctx = canvas.getContext('2d')
-
-      let user = msg.mentions.users.first() || msg.author
-
-      let avatar = user.avatarURL({format: 'png'})
-
-      loadImage(avatar).then((image) => { 
-        loadImage('img/lmap.jpg').then((flag) => {
-          ctx.drawImage(image, 0, 0, 400, 400)
-          ctx.globalAlpha = 0.5
-          ctx.drawImage(flag, 0, 0, 400, 400)
-
-          let attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'ave lmap.png')
-          msg.channel.send(attachment)
-        })
-      }).catch((err) => {
-        console.log(err)
-      })
-    } else if (text === 'l flag') {
-      let canvas = createCanvas(400, 400)
-      let ctx = canvas.getContext('2d')
-
-      loadImage(authorAvatar).then((image) => {
-        loadImage('img/lmap.jpg').then((flag) => {
-          ctx.drawImage(image, 0, 0, 400, 400)
-          ctx.globalAlpha = 0.5
-          ctx.drawImage(flag, 0, 0, 400, 400)
-
-          let attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'ave lmap.png')
-          msg.channel.send(attachment)
-        })
-      }).catch((err) => {
-        console.log(err)
-      })
+    if (prefix === 'l' || prefix === 'i') {
+      if (command.startsWith('flag')) {
+        makeFlag('new', text, msg)
+      } else if (command.startsWith('oldflag')) {
+        makeFlag('old', text, msg)
+      }
     }
   }
 })
