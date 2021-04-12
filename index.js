@@ -4,9 +4,9 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.3.1'
+const VERSION = 'v1.3.2'
 
-function makeFlag(arg, text, msg) {
+function makeFlag(arg, msg) {
   let canvas = createCanvas(400, 400)
   let ctx = canvas.getContext('2d')
 
@@ -59,9 +59,9 @@ client.on('message', msg => {
   if (!msg.author.bot) {
     if (prefix === 'l' || prefix === 'i') {
       if (command.startsWith('flag')) {
-        makeFlag('new', text, msg)
+        makeFlag('new', msg)
       } else if (command.startsWith('oldflag')) {
-        makeFlag('old', text, msg)
+        makeFlag('old', msg)
       } else if (command === 'help' || command === 'commands') {
         let embed = new Discord.MessageEmbed()
                                .setColor(`0x002d70`)
