@@ -4,9 +4,9 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.3.0'
+const VERSION = 'v1.3.1'
 
-function makeFlag(arg, msg) {
+function makeFlag(arg, text, msg) {
   let canvas = createCanvas(400, 400)
   let ctx = canvas.getContext('2d')
 
