@@ -4,9 +4,9 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.2.0'
+const VERSION = 'v1.3.0'
 
-function makeFlag(arg, text, msg) {
+function makeFlag(arg, msg) {
   let canvas = createCanvas(400, 400)
   let ctx = canvas.getContext('2d')
 
@@ -62,6 +62,13 @@ client.on('message', msg => {
         makeFlag('new', text, msg)
       } else if (command.startsWith('oldflag')) {
         makeFlag('old', text, msg)
+      } else if (command === 'help' || command === 'commands') {
+        let embed = new Discord.MessageEmbed()
+                               .setColor(`0x002d70`)
+                               .setTitle('i have only two commands:')
+                               .setDescription('• l flag\n• l oldflag');
+
+        msg.channel.send(embed)
       }
     }
   }
