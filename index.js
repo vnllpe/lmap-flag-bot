@@ -4,7 +4,7 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.6.0'
+const VERSION = 'v1.6.1'
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -168,7 +168,7 @@ client.on('message', msg => {
         let embed = new Discord.MessageEmbed()
                                .setColor(`0x002d70`)
                                .setTitle('so, this is my commands:')
-                               .setDescription('• l flag\n• l oldflag\n• bbbigbeak\n• bbzlol\n• bbbus\n• bbtoyota\n• bbsmellynugget')
+                               .setDescription(`• l flag\n• l oldflag\n• bbbigbeak\n• bbzlol\n• bbbus\n• bbtoyota\n• bbsmellynugget\n\ngithub repo: https://github.com/vnllpe/lmap-flag-bot/\nversion: ${VERSION}\n\n*with :heart: from vnllpe*`)
 
         msg.channel.send(embed)
       }
