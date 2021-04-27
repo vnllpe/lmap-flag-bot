@@ -4,7 +4,7 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.5.0'
+const VERSION = 'v1.5.1'
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -80,6 +80,7 @@ function sendBbCommand(arg, authorColor, authorUsername, authorAvatar, msg) {
                  'https://cdn.discordapp.com/attachments/828678818960375810/836691687895334962/-gallery6fu.png',
                  'https://cdn.discordapp.com/attachments/828678818960375810/836691734099394591/aa42b6e41b26d72693ec20628166230d.png',
                  'https://cdn.discordapp.com/attachments/828678818960375810/836691754836426832/10231img1.png',
+                 'https://cdn.discordapp.com/attachments/836697591856234538/836702534990299206/BRT3.jpg',
                  'https://cdn.discordapp.com/attachments/828678818960375810/836691810898149436/yHYra1573751438.png',
                  'https://cdn.discordapp.com/attachments/828678818960375810/836696343287693322/627458.png',
                  'https://cdn.discordapp.com/attachments/828678818960375810/836696439392436224/638788.png',
