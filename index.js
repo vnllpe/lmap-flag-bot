@@ -4,7 +4,7 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.5.1'
+const VERSION = 'v1.6.0'
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -120,6 +120,10 @@ function sendBbCommand(arg, authorColor, authorUsername, authorAvatar, msg) {
                   'https://cdn.discordapp.com/attachments/828678818960375810/836695895332356096/2021-Toyota-Supra-3-0-1.png']
 
     choosen = getRandomFromArray(toyota)
+  } else if (arg === 'smellynugget') {
+    let smellynugget = ['https://cdn.discordapp.com/attachments/737691320184995950/836700501424603156/20210427_002502.jpg']
+
+    choosen = getRandomFromArray(smellynugget)
   }
 
   let embed = new Discord.MessageEmbed()
@@ -164,7 +168,7 @@ client.on('message', msg => {
         let embed = new Discord.MessageEmbed()
                                .setColor(`0x002d70`)
                                .setTitle('so, this is my commands:')
-                               .setDescription('• l flag\n• l oldflag\n• bbbigbeak\n• bbzlol\n• bbbus\n• bbtoyota')
+                               .setDescription('• l flag\n• l oldflag\n• bbbigbeak\n• bbzlol\n• bbbus\n• bbtoyota\n• bbsmellynugget')
 
         msg.channel.send(embed)
       }
@@ -178,6 +182,8 @@ client.on('message', msg => {
       sendBbCommand('bus', authorColor, authorUsername, authorAvatar, msg)
     } else if (text === 'bbtoyota') {
       sendBbCommand('toyota', authorColor, authorUsername, authorAvatar, msg)
+    } else if (text === 'bbsmellynugget') {
+      sendBbCommand('smellynugget', authorColor, authorUsername, authorAvatar, msg)
     }
   }
 })
