@@ -4,7 +4,7 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.7.0'
+const VERSION = 'v1.8.0'
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -132,6 +132,16 @@ function sendBbCommand(arg, authorColor, authorUsername, authorAvatar, msg) {
                   'https://cdn.discordapp.com/attachments/837426406701924353/837426655168823357/20210429_233219.jpg',]
 
     choosen = getRandomFromArray(monkes)
+  } else if (arg === 'vnllpe') {
+    let vnllpe = ['https://cdn.discordapp.com/attachments/828678818960375810/837429326193492018/m5eWdl9y270.png',
+                  'https://cdn.discordapp.com/attachments/828678818960375810/837429379491299358/mtOjIaxrqm0.png',
+                  'https://cdn.discordapp.com/attachments/828678818960375810/837429411765813248/Me0khQW2Gp4.png',
+                  'https://cdn.discordapp.com/attachments/828678818960375810/837429722639368222/ds-avatar.gif',
+                  'https://cdn.discordapp.com/attachments/828678818960375810/837430030451736596/vanellope.png',
+                  'https://cdn.discordapp.com/attachments/828678818960375810/837430085099323432/a.png',
+                  'https://cdn.discordapp.com/attachments/828678818960375810/837430209636073472/7RQJnCfAAK0.png']
+
+    choosen = getRandomFromArray(vnllpe)
   }
 
   let embed = new Discord.MessageEmbed()
@@ -176,7 +186,7 @@ client.on('message', msg => {
         let embed = new Discord.MessageEmbed()
                                .setColor(`0x002d70`)
                                .setTitle('so, this is my commands:')
-                               .setDescription(`• l flag\n• l oldflag\n• bbbigbeak\n• bbbus\n• bbsaxmonke\n• bbsmellynugget\n• bbtoyota\n• bbzlol\n\ngithub repo: https://github.com/vnllpe/lmap-flag-bot/\nversion: ${VERSION}\n\n*with :heart: from vnllpe*`)
+                               .setDescription(`• l flag\n• l oldflag\n• bbbigbeak\n• bbbus\n• bbsaxmonke\n• bbsmellynugget\n• bbtoyota\n• bbvanellope\n• bbzlol\n\ngithub repo: https://github.com/vnllpe/lmap-flag-bot/\nversion: ${VERSION}\n\n*with :heart: from vnllpe*`)
 
         msg.channel.send(embed)
       }
@@ -194,6 +204,8 @@ client.on('message', msg => {
       sendBbCommand('smellynugget', authorColor, authorUsername, authorAvatar, msg)
     } else if (text === 'bbsaxmonke' || text === 'bbsaxmonkey' || text === 'bbmonke' || text === 'bbmonkey') {
       sendBbCommand('saxmonke', authorColor, authorUsername, authorAvatar, msg)
+    } else if (text === 'bbvanellope' || text === 'bbvanelope' || text === 'bbpenellope' || text === 'bbpenelope' || text === 'bbvnllpe') {
+      sendBbCommand('vnllpe', authorColor, authorUsername, authorAvatar, msg)
     }
   }
 })
