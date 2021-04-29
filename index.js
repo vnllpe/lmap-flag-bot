@@ -4,7 +4,7 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.6.1'
+const VERSION = 'v1.7.0'
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -124,6 +124,14 @@ function sendBbCommand(arg, authorColor, authorUsername, authorAvatar, msg) {
     let smellynugget = ['https://cdn.discordapp.com/attachments/737691320184995950/836700501424603156/20210427_002502.jpg']
 
     choosen = getRandomFromArray(smellynugget)
+  } else if (arg === 'saxmonke') {
+    let monkes = ['https://cdn.discordapp.com/attachments/837426406701924353/837426653504208958/20210429_233317.jpg',
+                  'https://cdn.discordapp.com/attachments/837426406701924353/837426653792829440/20210429_233259.jpg',
+                  'https://cdn.discordapp.com/attachments/837426406701924353/837426654044356678/20210429_233249.jpg',
+                  'https://cdn.discordapp.com/attachments/837426406701924353/837426654472437801/20210429_233239.jpg',
+                  'https://cdn.discordapp.com/attachments/837426406701924353/837426655168823357/20210429_233219.jpg',]
+
+    choosen = getRandomFromArray(monkes)
   }
 
   let embed = new Discord.MessageEmbed()
@@ -168,7 +176,7 @@ client.on('message', msg => {
         let embed = new Discord.MessageEmbed()
                                .setColor(`0x002d70`)
                                .setTitle('so, this is my commands:')
-                               .setDescription(`• l flag\n• l oldflag\n• bbbigbeak\n• bbzlol\n• bbbus\n• bbtoyota\n• bbsmellynugget\n\ngithub repo: https://github.com/vnllpe/lmap-flag-bot/\nversion: ${VERSION}\n\n*with :heart: from vnllpe*`)
+                               .setDescription(`• l flag\n• l oldflag\n• bbbigbeak\n• bbbus\n• bbsaxmonke\n• bbsmellynugget\n• bbtoyota\n• bbzlol\n\ngithub repo: https://github.com/vnllpe/lmap-flag-bot/\nversion: ${VERSION}\n\n*with :heart: from vnllpe*`)
 
         msg.channel.send(embed)
       }
@@ -184,6 +192,8 @@ client.on('message', msg => {
       sendBbCommand('toyota', authorColor, authorUsername, authorAvatar, msg)
     } else if (text === 'bbsmellynugget') {
       sendBbCommand('smellynugget', authorColor, authorUsername, authorAvatar, msg)
+    } else if (text === 'bbsaxmonke' || text === 'bbsaxmonkey' || text === 'bbmonke' || text === 'bbmonkey') {
+      sendBbCommand('saxmonke', authorColor, authorUsername, authorAvatar, msg)
     }
   }
 })
