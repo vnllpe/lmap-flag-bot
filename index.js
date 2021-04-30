@@ -4,7 +4,7 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.8.0'
+const VERSION = 'v1.8.1'
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -194,8 +194,8 @@ client.on('message', msg => {
 
     if (text === 'bbbigbeak' || text === 'bbbigbonk' || text === 'bbbigbruh') {
       sendBbCommand('bigbeak', authorColor, authorUsername, authorAvatar, msg)
-    } else if (text === 'bbzlol') {
-      sendBbCommand('zlol', authorColor, authorUsername, authorAvatar, msg)
+    //} else if (text === 'bbzlol') {
+    //  sendBbCommand('zlol', authorColor, authorUsername, authorAvatar, msg)
     } else if (text === 'bbbus') {
       sendBbCommand('bus', authorColor, authorUsername, authorAvatar, msg)
     } else if (text === 'bbtoyota') {
