@@ -4,7 +4,7 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.8.1'
+const VERSION = 'v1.8.2'
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -83,6 +83,7 @@ function sendBbCommand(arg, authorColor, authorUsername, authorAvatar, msg) {
                  'https://cdn.discordapp.com/attachments/836697591856234538/836702534990299206/BRT3.jpg',
                  'https://cdn.discordapp.com/attachments/828678818960375810/836691810898149436/yHYra1573751438.png',
                  'https://cdn.discordapp.com/attachments/828678818960375810/836696343287693322/627458.png',
+                 'https://cdn.discordapp.com/attachments/833760779500650516/838098579079823431/Toyota_Coaster_GX_XZB70.jpg',
                  'https://cdn.discordapp.com/attachments/828678818960375810/836696439392436224/638788.png',
                  'https://cdn.discordapp.com/attachments/828678818960375810/836691825334288424/94b3d5d8a97c499d1e93cca56e9efbdf.png',
                  'https://cdn.discordapp.com/attachments/828678818960375810/836691846033309716/741643b7c519a742_XL.png',
@@ -107,6 +108,7 @@ function sendBbCommand(arg, authorColor, authorUsername, authorAvatar, msg) {
                   'https://cdn.discordapp.com/attachments/828678818960375810/836694309452513310/5fa3b1488a36d.png',
                   'https://cdn.discordapp.com/attachments/828678818960375810/836694324224720936/KMO_152985_07275_1_t218_111143.png',
                   'https://cdn.discordapp.com/attachments/828678818960375810/836694350913601536/17_1920-1080_tcm-3020-2216821.png',
+                  'https://cdn.discordapp.com/attachments/833760779500650516/838098579079823431/Toyota_Coaster_GX_XZB70.jpg',
                   'https://cdn.discordapp.com/attachments/828678818960375810/836694576135798834/EmwjAZS7CK8.png',
                   'https://cdn.discordapp.com/attachments/828678818960375810/836694627934928966/L3BXw3GJ8HU.png',
                   'https://cdn.discordapp.com/attachments/828678818960375810/836694646540861530/L9vVqxA1rvw.png',

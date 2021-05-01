@@ -1,6 +1,6 @@
 {
   "name": "lmap-flag-bot",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "lmap flag bot",
   "main": "index.js",
   "scripts": {
