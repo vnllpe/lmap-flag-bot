@@ -4,7 +4,7 @@ const config = require('./config')
 const fs = require('fs')
 const {createCanvas, loadImage} = require('canvas')
 
-const VERSION = 'v1.8.2'
+const VERSION = 'v1.9.0'
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -144,6 +144,10 @@ function sendBbCommand(arg, authorColor, authorUsername, authorAvatar, msg) {
                   'https://cdn.discordapp.com/attachments/828678818960375810/837430209636073472/7RQJnCfAAK0.png']
 
     choosen = getRandomFromArray(vnllpe)
+  } else if (arg === 'aboba') {
+    let aboba = ['https://cdn.discordapp.com/attachments/828678818960375810/839988446655545394/aboba.png']
+
+    choosen = getRandomFromArray(aboba)
   }
 
   let embed = new Discord.MessageEmbed()
@@ -188,7 +192,7 @@ client.on('message', msg => {
         let embed = new Discord.MessageEmbed()
                                .setColor(`0x002d70`)
                                .setTitle('so, this is my commands:')
-                               .setDescription(`• l flag\n• l oldflag\n• bbbigbeak\n• bbbus\n• bbsaxmonke\n• bbsmellynugget\n• bbtoyota\n• bbvanellope\n• bbzlol\n\ngithub repo: https://github.com/vnllpe/lmap-flag-bot/\nversion: ${VERSION}\n\n*with :heart: from vnllpe*`)
+                               .setDescription(`• l flag\n• l oldflag\n• bbaboba\n• bbbigbeak\n• bbbus\n• bbsaxmonke\n• bbsmellynugget\n• bbtoyota\n• bbvanellope\n• bbzlol\n\ngithub repo: https://github.com/vnllpe/lmap-flag-bot/\nversion: ${VERSION}\n\n*with :heart: from vnllpe*`)
 
         msg.channel.send(embed)
       }
@@ -208,6 +212,8 @@ client.on('message', msg => {
       sendBbCommand('saxmonke', authorColor, authorUsername, authorAvatar, msg)
     } else if (text === 'bbvanellope' || text === 'bbvanelope' || text === 'bbpenellope' || text === 'bbpenelope' || text === 'bbvnllpe') {
       sendBbCommand('vnllpe', authorColor, authorUsername, authorAvatar, msg)
+    } else if (text === 'bbaboba') {
+      sendBbCommand('aboba', authorColor, authorUsername, authorAvatar, msg)
     }
   }
 })
