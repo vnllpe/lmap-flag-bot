@@ -24,9 +24,11 @@ function makeFlag(arg, msg) {
 
   let whichFlag
   if (arg === 'old') {
-    whichFlag = 'img/lmap_old.png'
+    whichFlag = 'img/lmap_old.jpg'
+  } else if (arg === 'older') {
+    whichFlag = 'img/lmap_older.png'
   } else {
-    whichFlag = 'img/lmap.jpg'
+    whichFlag = 'img/lmap.png'
   }
 
   loadImage(avatar).then((image) => { 
