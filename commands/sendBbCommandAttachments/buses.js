@@ -1,0 +1,20 @@
+let buses = [ 'https://cdn.discordapp.com/attachments/828678818960375810/836691197183524874/Mosbus_2-19-2.png',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836691659147182100/217_h66gzKa.png',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836691687895334962/-gallery6fu.png',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836691734099394591/aa42b6e41b26d72693ec20628166230d.png',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836691754836426832/10231img1.png',
+              'https://cdn.discordapp.com/attachments/836697591856234538/836702534990299206/BRT3.jpg',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836691810898149436/yHYra1573751438.png',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836696343287693322/627458.png',
+              'https://cdn.discordapp.com/attachments/833760779500650516/838098579079823431/Toyota_Coaster_GX_XZB70.jpg',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836696439392436224/638788.png',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836691825334288424/94b3d5d8a97c499d1e93cca56e9efbdf.png',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836691846033309716/741643b7c519a742_XL.png',
+              'https://cdn.discordapp.com/attachments/737691320184995950/836694261042511912/18-FolkestoneHarbourArm-0791.jpg',
+              'https://cdn.discordapp.com/attachments/737691320184995950/836694437207343165/Athens-bus.jpg',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836691880631599144/4503599672748895_4cef.png',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836691946554130482/Route_C2ABD091C2BB_Moscow_bus.png',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836691976303673435/3-1024x683.png',
+              'https://cdn.discordapp.com/attachments/828678818960375810/836691998189682768/Article_170701_860_575.png',]
+
+module.exports.buses = buses
