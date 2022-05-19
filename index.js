@@ -27,8 +27,14 @@ client.on('messageCreate', msg => {
   let authorPing = `<@!${msg.author.id.toString()}>`
   let authorTag = msg.author.tag
   let authorUsername = msg.author.username
-  let authorColor = msg.member.displayHexColor
   let authorAvatar = msg.author.displayAvatarURL({dynamic: true})
+
+  let authorColor
+  try {
+    authorColor = msg.member.displayHexColor
+  } catch {
+    authorColor = '#000000'
+  }
 
   let getGuild = client.guilds.cache.get(msg.guild.id)
 
