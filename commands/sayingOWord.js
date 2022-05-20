@@ -11,17 +11,17 @@ next time don't forget the only rule of this server: ***the most important rule 
     .setTitle(`:warning::warning::warning: ${authorUsername} just said the o-word!`)
     .setDescription(description)
 
-  try {
-    msg.member.timeout(3 * 60 * 1000, 'saying o-word')
-  } catch {
-    return
-  }
+  msg.member.timeout(3 * 60 * 1000, 'saying o-word')
+    .then(() => {
+      try { 
+        msg.reply({embeds: [embed]})
+      } catch { 
+        msg.channel.send(authorPing, {embeds: [embed]}) 
+      }
+    })
+    .catch(() => {return})
 
-  try { 
-    msg.reply({embeds: [embed]})
-  } catch { 
-    msg.channel.send(authorPing, {embeds: [embed]}) 
-  }
+    
 }
 
 module.exports.sayingOWord = sayingOWord
